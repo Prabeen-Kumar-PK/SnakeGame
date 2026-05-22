@@ -8,7 +8,7 @@
   </head>
   <body>
     <main>
-      <section>
+      <section class="game-section">
         <div class="infos">
           <div class="info">
             <h3>High Score : <span id="high-score">0</span></h3>
@@ -21,6 +21,9 @@
           <div class="info">
             <h3>Time : <span id="time">00:00</span></h3>
           </div>
+
+          <button class="btn btn-pause" type="button" disabled>Pause</button>
+          <button class="btn btn-save" type="button" disabled>Save Game</button>
         </div>
 
         <div class="board"></div>
@@ -28,12 +31,34 @@
       <div class="modal">
         <div class="start-game">
           <h2>Welcome to Snake Game</h2>
-          <button class="btn btn-start">Start Game</button>
+          <p>Start fresh or continue from your last saved run.</p>
+          <div class="modal-actions">
+            <button class="btn btn-start">Start Game</button>
+            <button class="btn btn-load" type="button">Load Saved Game</button>
+          </div>
+        </div>
+        <div class="new-game">
+          <h2>New Game</h2>
+          <p>Fresh run mode resets the stored high score to 0.</p>
+          <button class="btn btn-new-game" type="button">New Game</button>
+        </div>
+        <div class="help-panel">
+          <h3>Help</h3>
+          <p>Normal speed: 300ms per move.</p>
+          <p>Boost speed: 140ms per move.</p>
+          <p>Hold <strong>Shift</strong> and press any <strong>Arrow key</strong> to speed up the snake while you move.</p>
         </div>
         <div class="game-over">
           <h2>Game Over</h2>
-          <button class="btn btn-restart">Restart Game</button>
+          <div class="modal-actions">
+            <button class="btn btn-restart">Restart Game</button>
+            <button class="btn btn-load" type="button">Load Saved Game</button>
+          </div>
         </div>
+      </div>
+      <div class="game-over-alert">
+        <h2>Game Over</h2>
+        <button class="btn btn-ok" type="button">OK</button>
       </div>
     </main>
     <script type="module" src="/src/main.js"></script>
